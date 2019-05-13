@@ -1,12 +1,10 @@
 from django.shortcuts import render
-from django.template import loader 
 
 def home(request):
 
-    template = loader.get_template('home.html')
-    context = {
+    words = {"Home", "Hello World"}
+    return render(request, 'login/home.html', context={"section": words})
 
-        'name': 'Home',
+# def login(request):
 
-    }
-    return render(request, '')
+#     return render(request, 'login/base.html')
