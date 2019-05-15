@@ -2,15 +2,21 @@
 <html>
 <head>
 
+    <!-- meta -->
     <meta charset="utf-8">
+    <meta name="description" content="Login website">
+    <meta name="keywords" content="andrew li, login, user, password">
+    <meta name="author" content="Andrew Li">
     <!-- Mini icon on tab -->
+
     <!-- Title of page -->
-    <title> {% block title %}
-    {% endblock title %} </title>
+    <title> {% block title %} {% endblock title %} </title>
     <!-- JS -->
-    <!-- <script src="_js/index.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>if (!window.jQuery) document.write('<script src="jslib/jquery-3.3.1.min.js"><\/script>');</script>
+    <script src="jslib/bootstrap.min.js"></script>
     <!-- Styleshet -->
-    <!-- <link rel="stylesheet" href="_css/index.css" type="text/css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <style>
         a {
 
