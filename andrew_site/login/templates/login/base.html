@@ -19,27 +19,17 @@
     <!-- Styleshet -->
     <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}" type="text/css">
     <style>
-        a {
+div {
 
-            color: cornflowerblue;
+    position: block;
+    margin-top: 2vh;
+    text-align: center;
 
-        }
-        
-        a:hover {
-
-            color: rgb(10, 79, 206);
-
-        }
-        div {
-
-            position: block;
-            margin-top: 40vh;
-            text-align: center;
-
-        }
-        p {
-            font-size: 2em;
-        }
+}
+p {
+    font-size: 2em;
+}
+        {% block style %} {% endblock style %}
     </style>
 
 </head>

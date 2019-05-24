@@ -2,8 +2,28 @@
 
 {% block title %} {{ section.home }} {% endblock %}
 
+{% block style %} 
+#login {
+
+    color: cornflowerblue;
+
+}
+
+#login:hover {
+
+    color: rgb(10, 79, 206);
+    transition: 1s;
+
+}
+div {
+
+    margin-top: 40vh;
+
+}
+{% endblock style %} 
+
 {% block text %} 
 <p> {{ section.text }} </p>
-<p> <a href="{{ section.link }}">Login</a></p>
+<p> <a id="login" href="{% url "login" %}">Login</a></p>
 {% endblock text %}
 

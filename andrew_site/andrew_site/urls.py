@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from login import views
 
+# TODO: 404 errors
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('login', views.login, name='login')
+    path('login/', views.login, name='login')
 ]
