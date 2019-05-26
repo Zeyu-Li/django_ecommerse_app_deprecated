@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView
 from login import views
 
 # TODO: 404 errors
@@ -22,5 +23,5 @@ from login import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('login/', views.login, name='login')
+    path('login/', LoginView.as_view(template_name='login/login.html'), name="login")
 ]
