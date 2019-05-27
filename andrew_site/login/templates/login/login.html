@@ -8,9 +8,10 @@
 }
 {% endblock style %}
 
+{% block active %} active {% endblock active %}
+
 {% block text %}
 <div class="container">
-
     <p>Login</p>
     <form method="POST">
         {% csrf_token %}
