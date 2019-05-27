@@ -2,16 +2,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
+{% comment %} TODO:
+redo front page
+https://www.youtube.com/watch?v=s_kB9ni9Ukg&list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj&index=14
+{% endcomment %}
     <!-- meta -->
     <meta charset="utf-8">
     <meta name="description" content="Login website">
     <meta name="keywords" content="andrew li, login, user, password">
     <meta name="author" content="Andrew Li">
     <!-- Mini icon on tab -->
-
+    <link rel="icon" href="{% static 'login/images/red_star.ico' %}" type="image/ico">
     <!-- Title of page -->
-    <title> {% block title %} {% endblock title %} </title>
+    <title> Red Star | {% block title %} {% endblock title %} </title>
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>if (!window.jQuery) document.write('<script src="jslib/jquery-3.3.1.min.js"><\/script>');</script>
@@ -19,7 +22,7 @@
     <!-- Styleshet -->
     <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}" type="text/css">
     <style>
-div {
+.main {
 
     position: block;
     margin-top: 2vh;
@@ -29,14 +32,58 @@ div {
 p {
     font-size: 2em;
 }
-        {% block style %} {% endblock style %}
+.top_link p:hover {
+    color: yellow;
+}
+.form-control:focus {
+    border-color: #23243a !important;
+    box-shadow: 0 0 5px rgba(34, 35, 61, 1) !important;
+}
+.nav-link:hover, .navbar-brand:hover, .nav-link, .navbar-brand {
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+}
+.navbar-dark .navbar-brand:hover {
+    color: #ff304b;
+}
+{% block style %} {% endblock style %}
     </style>
 
 </head>
 
 <body>
 
-    <div>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'login/images/red_star.svg' %}" width="30" height="30" class="d-inline-block align-top img-fluid hoverable" alt="Red Star Ltd."> Red Star</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="main">
         {% block text %}
         {% endblock text %}
     </div>

@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 
+{% block title %} Login {% endblock title %}
+
+{% block style %}
+.main {
+    margin-top: 30vh;
+}
+{% endblock style %}
 
 {% block text %}
-<p>Works</p>
+<div class="container">
+
+    <p>Login</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</div>
 {% endblock text %}
