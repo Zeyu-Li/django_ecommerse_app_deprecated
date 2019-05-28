@@ -1,9 +1,9 @@
 Tasks:
- [ ] - Forked Django project from my other account
+ [x] - Forked Django project from my other account
 
- [ ] - Add models (database details)
+ [x] - Add models (database details)
 
- [ ] - Update templates w/ Bootstrap
+ [x] - Update templates w/ Bootstrap
 
  [ ] - Add shopping cart options (if enough time)
 

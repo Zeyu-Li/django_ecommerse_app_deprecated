@@ -4,6 +4,9 @@ body {
     overflow-x: hidden;
     font-family: PT Sans Narrow, sans-serif
 }
+h2, h1 {
+    text-align: center;
+}
 p, h1, h2 {
     margin: 0 auto;
 }

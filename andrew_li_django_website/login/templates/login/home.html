@@ -29,18 +29,15 @@ h1 {
     transition: .3s;
     background-color: rgb(137, 182, 255);
 }
-h2 {
-    text-align: center;
-}
 {% endblock style %} 
 
 {% block banner %}
 
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="{% static 'login/images/opening1.svg' %}"></div>
-        <div class="swiper-slide"><img src="{% static 'login/images/opening2.svg' %}"></div>
-        <div class="swiper-slide"><img src="{% static 'login/images/opening3.svg' %}"></div>
+        <div class="swiper-slide"><img src="{% static 'login/images/opening1.svg' %}" alt="Grand Opening" title="Grand Opening of Red Star"></div>
+        <div class="swiper-slide"><img src="{% static 'login/images/opening2.svg' %}" alt="Great Deals" title="Greatest Deals in the Country"></div>
+        <div class="swiper-slide"><a href="#"><img src="{% static 'login/images/opening3.svg' %}" alt="Sign up today" title="Sign Up"></a></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>

@@ -7,18 +7,56 @@
     margin-top: 20vh;
     margin-bottom: 20vh;
 }
+h2 {
+    padding-top: 50px;
+    font-size: 3em;
+}
+.container {
+    max-width: 960px;
+    background-color: #bdb8b8;
+    border-radius: 30px;
+}
+.bottom {
+    height: 50px;
+}
+.asteriskField {
+    display: none;
+}
+.requiredField {
+    font-weight: bold;
+}
+.register {
+    padding-top: 50px;
+}
+.register a {
+    text-decoration: none;
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s
+}
+.register a:hover {
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s
+}
 {% endblock style %}
 
 {% block active %} active {% endblock active %}
 
 {% block text %}
 
-<div class="container">
-    <p>Login</p>
-    <form method="POST">
+{% load crispy_forms_tags %}
+
+<div class="container shadow-lg">
+    <h2>Login<br><br></h2>
+    <form method="POST" style="padding-left: 80px;padding-right: 80px;">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Login</button>
     </form>
+    <div class="bottom"></div>
 </div>
+<div><p class="register">Not a member? <a href="#">Register</a> for free now.</p></div>
 {% endblock text %}
