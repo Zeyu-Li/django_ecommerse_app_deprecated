@@ -76,7 +76,16 @@
         {% endblock text %}
     </div>
 
-<div class="push"></div>
+    <div class="products">
+        {% block products %}
+        {% endblock products %}
+    </div>
+
+<div class="push">
+    {% block scripts %}
+    {% endblock scripts %}
+</div>
+
 <footer class="footer">
 
     <div class="footer1">
