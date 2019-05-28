@@ -22,6 +22,13 @@ h1 {
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
+.swiper-pagination-bullet {
+    transition: .3s;
+}
+.swiper-pagination-bullet:hover {
+    transition: .3s;
+    background-color: rgb(137, 182, 255);
+}
 {% endblock style %} 
 
 {% block banner %}
@@ -43,7 +50,7 @@ h1 {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
-        spaceBetween: 30,
+        spaceBetween: 0,
         centeredSlides: true,
         loop: true,
     autoplay: {
