@@ -30,3 +30,4 @@
 ## Django_Login (2019.05.29)
  * updated changelog
  * added registration form
+ * added changed profile
