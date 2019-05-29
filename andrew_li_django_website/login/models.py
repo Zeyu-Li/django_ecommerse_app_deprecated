@@ -8,9 +8,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     email = models.EmailField(max_length=70, default='')
 
-    def __str__(self):
-        return self.title
-
 
 def create_profile(sender, **kwargs):
     if kwargs['created']:

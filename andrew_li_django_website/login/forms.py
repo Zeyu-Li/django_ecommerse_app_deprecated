@@ -5,7 +5,7 @@ from captcha.fields import ReCaptchaField
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(label='')
 
     class Meta:
         model = User
@@ -19,8 +19,7 @@ class RegistrationForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
-        user.username = self.cleaned_data('username')
-        user.email = self.cleaned_data('email')
+        user.email = self.cleaned_data['email']
 
         if commit:
             user.save()

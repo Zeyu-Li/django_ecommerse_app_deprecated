@@ -25,6 +25,8 @@ urlpatterns = [
     path('', user_views.home, name='home'),
     path('home/', user_views.home_redirect, name='home_redirect'),
     path('register/', user_views.register, name="register"),
+    path('profile/', user_views.profile, name='profile'),
+    path('profile/edit', user_views.edit_profile, name='edit_profile'),
     path('login/', LoginView.as_view(template_name='login/login.html'), name="login"),
     path('logout/', LogoutView.as_view(template_name='login/home.html'), {'extra_context':{'message':'True', 'page': 'home'}}, name="logout"),
 ]
