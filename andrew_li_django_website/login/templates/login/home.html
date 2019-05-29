@@ -29,9 +29,24 @@ h1 {
     transition: .3s;
     background-color: rgb(137, 182, 255);
 }
-{% endblock style %} 
+.alert {
+    margin-bottom: 0px;
+    display:none;
+}
+
+{% endblock style %}
 
 {% block banner %}
+
+{% if extra_context.message %}
+<div class="alert alert-warning alert-dismissible show" role="alert">
+    <strong>Logout</strong> You have logged out successfully
+    <button type="button" class="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
 
 <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -89,16 +104,21 @@ Here at Red Star, we have dedicated our products to be cheap and reliable.
             },
         });
 
+        $(".close").click(function(){
+            $(".alert").slideUp();
+        });
+
         $(document).ready(function() {
-        var mySwiper = document.querySelector('.swiper-container').swiper
+            $(".alert").slideDown();
+            var mySwiper = document.querySelector('.swiper-container').swiper
 
-        $(".swiper-container").mouseenter(function() {
-            mySwiper.autoplay.stop();
-        });
+            $(".swiper-container").mouseenter(function() {
+                mySwiper.autoplay.stop();
+            });
 
-        $(".swiper-container").mouseleave(function() {
-            mySwiper.autoplay.start();
-        });
+            $(".swiper-container").mouseleave(function() {
+                mySwiper.autoplay.start();
+            });
     });
     </script>
 

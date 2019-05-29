@@ -6,6 +6,7 @@ It is also being expanded to include a shopping cart option.
 
 ## How to use
 To start, install the required packages using the requirement.txt
+This step will require the [virtual ven module](https://docs.python.org/3/library/venv.html)
 
 This can be done by entering in
 
@@ -22,5 +23,9 @@ OR
     python3 manage.py runserver
 if you are on Mac or Linux
 
+## Simple Rundown
+
+![flowchart](pictures/flowchart.png)
+
 ## Reuse
-This code is under MIT licease
+This code is under MIT licence.

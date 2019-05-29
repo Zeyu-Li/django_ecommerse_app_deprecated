@@ -15,7 +15,7 @@ h1 {
 }
 .main {
 
-    position: block;
+    display: block;
     margin: 0 auto -188px;
     max-width: 960px;
 

@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth.views import LoginView
-from login import views
+from django.contrib.auth.views import LoginView, LogoutView
+from login import views as user_views
 
 # TODO: 404 errors
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('login/', LoginView.as_view(template_name='login/login.html'), name="login")
+    path('', user_views.home, name='home'),
+    path('home/', user_views.home_redirect, name='home_redirect'),
+    path('register/', user_views.register, name="register"),
+    path('login/', LoginView.as_view(template_name='login/login.html'), name="login"),
+    path('logout/', LogoutView.as_view(template_name='login/home.html'), {'extra_context':{'message':'True', 'page': 'home'}}, name="logout"),
 ]
