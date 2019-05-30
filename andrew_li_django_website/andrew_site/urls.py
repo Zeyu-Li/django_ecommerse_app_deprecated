@@ -30,8 +30,9 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('profile/edit/', user_views.edit_profile, name='edit_profile'),
     path('profile/password/', user_views.changepassword, name='changepassword'),
+    # {'extra_context':{'message':'True','message_title':'Login','message_text':'You logged in!'}}
     path('login/', LoginView.as_view(template_name='login/login.html'), name="login"),
-    path('logout/', LogoutView.as_view(template_name='login/home.html'), {'extra_context':{'message':'True', 'page': 'home'}}, name="logout"),
+    path('logout/', LogoutView.as_view(template_name='login/home.html'), {'extra_context':{'message':'True','message_title':'Logout','message_text':'You have logged out successfully'}}, name="logout"),
     path('reset_password/', PasswordResetView.as_view(template_name='login/resetpassword.html'), name="password_reset"),
     path('reset_password/done/', PasswordResetDoneView.as_view(template_name='login/resetpassword.html'), name="password_done"),
     path('reset_password/confirm/', PasswordResetConfirmView.as_view(template_name='login/resetpassword.html'), name="password_comfirm"),

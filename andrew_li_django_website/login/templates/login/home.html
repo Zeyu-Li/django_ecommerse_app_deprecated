@@ -40,7 +40,7 @@ h1 {
 
 {% if extra_context.message %}
 <div class="alert alert-warning alert-dismissible show" role="alert">
-    <strong>Logout</strong> You have logged out successfully
+    <strong>{{ extra_context.message_title }}</strong> {{ extra_context.text_message }}
     <button type="button" class="close">
         <span aria-hidden="true">&times;</span>
     </button>

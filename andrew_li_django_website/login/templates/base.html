@@ -49,14 +49,24 @@
                     <a class="nav-link" href="{% url 'home' %}">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
+                    <a class="nav-link" href="#">Shop </a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Cart </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">My Proile </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout </a>
+                </li>
+                {% else %}
                 <li class="nav-item {% block active %} {% endblock active %}">
                     <a class="nav-link" href="{% url 'login' %}">Login </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">My Cart</a>
-                </li>
+                {% endif %}
+
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -99,8 +109,13 @@
         <ul class="bottom">
             <li><a href="{% url 'home' %}">Home </a></li>
             <li><a href="#">Shop </a></li>
+            {% if user.is_authenticated %}
+            <li><a href="#">My Cart</a></li>
+            <li><a href="{% url 'profile' %}">My Proile</a></li>
+            <li><a href="{% url 'logout' %}">Logout </a></li>
+            {% else %}
             <li><a href="{% url 'login' %}">Login </a></li>
-            <li><a href="#">My Cart </a></li>
+            {% endif %}
         </ul>
 
     </div>
