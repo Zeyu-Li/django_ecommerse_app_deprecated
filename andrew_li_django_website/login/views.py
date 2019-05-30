@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from login.forms import (
     RegistrationForm, EditProfileForm
 )
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -33,11 +35,14 @@ def register(request):
         return render(request, 'login/register.html', args)
 
 
+@login_required
 def profile(request):
     args = {'user':request.user}
 
     return render(request, 'login/profile.html', args)
 
+
+@login_required
 def edit_profile(request):
 
     if request.method == 'POST':
@@ -53,6 +58,7 @@ def edit_profile(request):
         return render(request, 'login/edit_profile.html', args)
 
 
+@login_required
 def changepassword(request):
 
     if request.method == 'POST':

@@ -33,14 +33,17 @@ h1 {
     margin-bottom: 0px;
     display:none;
 }
+.show {
+    top:56px;
+}
 
 {% endblock style %}
 
 {% block banner %}
 
 {% if extra_context.message %}
-<div class="alert alert-warning alert-dismissible show" role="alert">
-    <strong>{{ extra_context.message_title }}</strong> {{ extra_context.text_message }}
+<div class="alert alert-warning alert-dismissible show sticky-top" role="alert">
+    <strong>{{ extra_context.message_title }}</strong> {{ extra_context.message_text }}
     <button type="button" class="close">
         <span aria-hidden="true">&times;</span>
     </button>
