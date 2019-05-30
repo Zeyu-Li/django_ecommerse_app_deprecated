@@ -6,7 +6,7 @@ It is also being expanded to include a shopping cart option.
 
 ## How to use
 To start, install the required packages using the requirement.txt
-This step will require the [virtual ven module](https://docs.python.org/3/library/venv.html)
+This step will require the [virtual ven module](https://docs.python.org/3/library/venv.html) (this will require admin access)
 
 This can be done by entering in
 
