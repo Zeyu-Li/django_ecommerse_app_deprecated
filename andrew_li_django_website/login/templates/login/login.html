@@ -59,5 +59,6 @@ h2 {
     </form>
     <div class="bottom"></div>
 </div>
+<div><p class="register">Did you forget your password? Click this <a href="{% url 'password_reset' %}">link</a> (Not working due to no email server setup)</p></div>
 <div><p class="register">Not a member? <a href="{% url 'register' %}">Register</a> for free now.</p></div>
 {% endblock text %}
