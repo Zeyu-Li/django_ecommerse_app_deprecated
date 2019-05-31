@@ -22,6 +22,7 @@ def home_redirect(request):
 
 def register(request):
 
+# TODO: change redirects to render with messages
     if request.user.is_authenticated:
         return redirect('home')
 
