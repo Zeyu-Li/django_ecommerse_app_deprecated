@@ -24,7 +24,8 @@ def register(request):
 
 # TODO: change redirects to render with messages
     if request.user.is_authenticated:
-        return redirect('home')
+        extra_context = {'extra_context':{'message':'True','message_title':'Warning: ','message_text':'You are already logged in'}}
+        return render(request, 'login/home.html', extra_context)
 
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

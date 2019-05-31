@@ -19,6 +19,8 @@ from django.contrib.auth.views import (
     LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 )
 from login import views as user_views
+from shop import views as shop_views
+
 
 # TODO: 404 errors
 
@@ -36,5 +38,7 @@ urlpatterns = [
     path('reset_password/done/', PasswordResetDoneView.as_view(template_name='login/text.html'), name="password_reset_done"),
     path('reset_password/complete/', PasswordResetCompleteView.as_view(template_name='login/home.html'), name="password_reset_complete"),
     path('reset_password/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='login/resetpassword.html'), name="password_reset_confirm"),
+
+    # path('shop/',)
 
 ]
