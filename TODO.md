@@ -12,7 +12,7 @@
 
  [x] - Update templates
 
- [ ] - Added password reset
+ [x] - Added password reset
 
  [ ] - Add shopping cart options (if enough time)
 

@@ -37,4 +37,8 @@
  
 ## 0.7 (2019.05.30)
 
- * 
+ * added password reset form
+
+## 0.8 (2019.05.31)
+
+ * added shopping app
