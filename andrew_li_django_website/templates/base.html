@@ -43,15 +43,15 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item {% if page == "home" %} active {% endif %}">
+                <li class="nav-item {% if page == 'home' %} active {% endif %}">
                     <a class="nav-link" href="{% url 'home' %}">Home </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Shop </a>
+                <li class="nav-item {% if page == 'shop' %} active {% endif %}">
+                    <a class="nav-link" href="{% url 'item_list' %}">Shop </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Cart </a>
+                    <a class="nav-link {% if page == 'cart' %} active {% endif %}" href="#">My Cart </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">My Proile </a>
@@ -106,7 +106,7 @@
 
         <ul class="bottom">
             <li><a href="{% url 'home' %}">Home </a></li>
-            <li><a href="#">Shop </a></li>
+            <li><a href="{% url 'item_list' %}">Shop </a></li>
             {% if user.is_authenticated %}
             <li><a href="#">My Cart</a></li>
             <li><a href="{% url 'profile' %}">My Proile</a></li>
