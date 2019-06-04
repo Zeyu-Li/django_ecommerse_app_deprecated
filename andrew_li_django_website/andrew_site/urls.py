@@ -20,7 +20,7 @@ from django.contrib.auth.views import (
 )
 from login import views as user_views
 from shop import views as shop_views
-
+from shop.views import ItemsView
 
 # TODO: 404 errors
 
@@ -40,7 +40,7 @@ urlpatterns = [
     path('reset_password/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='login/resetpassword.html'), name="password_reset_confirm"),
 
     # shop
-    path('shop/', shop_views.item_list, name='item_list'),
+    path('shop/', ItemsView.as_view(), name='item_list'),
     path('shop/product/', shop_views.product, name='product'),
     path('shop/checkout/', shop_views.checkout, name='checkout'),
 

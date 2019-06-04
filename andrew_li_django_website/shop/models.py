@@ -9,8 +9,8 @@ CATEGORY_CHOICES = (
     ('Misc','Other')
 )
 LABEL_CHOICES = (
-    ('N','new'),
-    ('H', 'hot'),
+    ('P','primary'),
+    ('S', 'secondary'),
     ('D', 'danger')
 )
 

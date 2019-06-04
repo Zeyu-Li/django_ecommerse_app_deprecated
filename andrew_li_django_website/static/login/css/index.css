@@ -30,10 +30,6 @@ p {
 .top_link p:hover {
     color: yellow;
 }
-.form-control:focus {
-    border-color: #cecfd1;
-    box-shadow: 0 0 5px rgb(15, 15, 223);
-}
 .nav-link:hover, .navbar-brand:hover, .nav-link, .navbar-brand {
     transition: .2s;
     -moz-transition: .2s;

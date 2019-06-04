@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from shop.models import Item
+from django.views.generic import ListView, DetailView
 
 
 def item_list(request):
     context = {
-        # 'items': Item.objects.all(),
+        'items': Item.objects.all(),
         'page': 'shop'
     }
 
@@ -20,10 +21,13 @@ def product(request):
     return render(request, 'shop/product.html', context)
 
 
-def checkout(request):
+class ItemsView(ListView):
 
-    context = {
-        'page': 'cart'
-    }
+    model = Item
+    template_name = 'shop/shop.html'
 
-    return render(request, 'shop/checkout.html')
+
+class ItemDetailView(DetailView):
+
+    model = Item
+    template_name = 'shop/product.html'
