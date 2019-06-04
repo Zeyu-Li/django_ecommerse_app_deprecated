@@ -41,5 +41,7 @@ This includes:
 
 ![flowchart](pictures/flowchart.png)
 
+ ** using SQLite3 database
+
 ## Reuse
 This code is under MIT licence.
