@@ -45,6 +45,6 @@
  * added production and dev setting env
  * started shopping app
 
-## 0.9 (2019.06.01)
+## 0.9 (2019.06.03)
 
-* 
+ * 
