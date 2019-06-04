@@ -4,13 +4,13 @@ from django.conf import settings
 from django.shortcuts import reverse
 
 CATEGORY_CHOICES = (
-    ('Tech','Technology'),
+    ('Tech', 'Technology'),
     ('Access', 'Accessories'),
     ('Trans', 'Transportation'),
-    ('Misc','Other')
+    ('Misc', 'Other')
 )
 LABEL_CHOICES = (
-    ('P','primary'),
+    ('P', 'primary'),
     ('S', 'secondary'),
     ('D', 'danger')
 )

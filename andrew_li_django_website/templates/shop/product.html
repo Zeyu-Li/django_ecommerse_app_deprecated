@@ -80,7 +80,12 @@ h1 {
             <span class="mr-1">
                 <del>$400</del>
             </span>
-            <span>${{ object.price }}</span>
+            <span>$
+            {% if it.discount_price %}
+            {{ item.discount_price }}
+            {% else %}
+            {{ item.price }}
+            {% endif %}</span>
             </p>
 
             <p class="lead font-weight-bold">Description</p>

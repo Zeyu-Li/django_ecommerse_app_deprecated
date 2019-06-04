@@ -22,6 +22,8 @@ from login import views as user_views
 from shop import views as shop_views
 from shop.views import ItemsView, ItemDetailView
 
+app_name = "core"
+
 # TODO: 404 errors
 
 urlpatterns = [
