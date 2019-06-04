@@ -20,7 +20,7 @@ from django.contrib.auth.views import (
 )
 from login import views as user_views
 from shop import views as shop_views
-from shop.views import ItemsView
+from shop.views import ItemsView, ItemDetailView
 
 # TODO: 404 errors
 
@@ -41,7 +41,7 @@ urlpatterns = [
 
     # shop
     path('shop/', ItemsView.as_view(), name='item_list'),
-    path('shop/product/', shop_views.product, name='product'),
+    path('shop/product/<slug>/', ItemDetailView.as_view(), name='product'),
     path('shop/checkout/', shop_views.checkout, name='checkout'),
 
 ]

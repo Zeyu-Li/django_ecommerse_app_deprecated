@@ -21,6 +21,15 @@ def product(request):
     return render(request, 'shop/product.html', context)
 
 
+def checkout(request):
+
+    context = {
+        'page': 'shop'
+    }
+
+    return render(request, 'shop/checkout.html', context)
+
+
 class ItemsView(ListView):
 
     model = Item

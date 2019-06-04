@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} Shop {% endblock %}
-{% comment %} TODO: https://www.youtube.com/watch?v=Xjty8q524Jo {% endcomment %}
+{% comment %} TODO: https://www.youtube.com/watch?v=Xjty8q524Jo (14:00) {% endcomment %}
 {% block shopping %}
 {% endblock shopping %}
 
@@ -142,7 +142,7 @@ color: #1c1b1b!important
                             </a>
                             <h5>
                                 <strong>
-                                    <a href="" class="dark-grey-text">{{ item.title }}
+                                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
                                         <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span>
                                     </a>
                                 </strong>
@@ -188,12 +188,6 @@ color: #1c1b1b!important
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">5</a>
                 </li>
 
                 <li class="page-item">

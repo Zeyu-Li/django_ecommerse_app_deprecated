@@ -51,4 +51,4 @@
 
 ## 0.10 (2019.06.04)
 
- * 
+ * updated and finished shopping cart

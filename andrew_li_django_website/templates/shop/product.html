@@ -66,7 +66,7 @@ h1 {
 
             <div class="mb-3">
             <a href="">
-                <span class="badge purple mr-1">Category 2</span>
+                <span class="badge purple mr-1">{{ object.get_catagory_display }}</span>
             </a>
             <a href="">
                 <span class="badge blue mr-1">New</span>
@@ -78,9 +78,9 @@ h1 {
 
             <p class="lead">
             <span class="mr-1">
-                <del>$200</del>
+                <del>$400</del>
             </span>
-            <span>$100</span>
+            <span>${{ object.price }}</span>
             </p>
 
             <p class="lead font-weight-bold">Description</p>
