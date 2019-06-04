@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block shopping %}
-<!-- Material Design Bootstrap -->
-<link href="{% static 'shop/css/mdb.min.css' %}" rel="stylesheet">
-<!-- Your custom styles (optional) -->
-<link href="{% static 'shop/css/style.min.css' %}" rel="stylesheet">
 {% endblock shopping %}
 
 {% block title %} Product {% endblock %}
@@ -165,14 +161,3 @@ h1 {
 </main>
 <!--Main layout-->
 {% endblock text %}
-
-{% block scripts %}
-    <script type="text/javascript" src="{% static 'shop/js/popper.min.js' %}"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="{% static 'shop/js/mdb.min.js' %}"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        new WOW().init();
-    </script>
-{% endblock scripts %}
