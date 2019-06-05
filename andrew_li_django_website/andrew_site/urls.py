@@ -16,13 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import (
-    LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+    LoginView, LogoutView, PasswordResetView, 
+    PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView,
 )
 from login import views as user_views
 from shop import views as shop_views
-from shop.views import ItemsView, ItemDetailView
-
-app_name = "core"
+from shop.views import ItemsView, ItemDetailView, add_to_cart
 
 # TODO: 404 errors
 
@@ -45,5 +44,6 @@ urlpatterns = [
     path('shop/', ItemsView.as_view(), name='item_list'),
     path('shop/product/<slug>/', ItemDetailView.as_view(), name='product'),
     path('shop/checkout/', shop_views.checkout, name='checkout'),
+    path('shop/add-to-cart/', shop_views.add_to_cart, name='add-to-cart'),
 
 ]

@@ -18,6 +18,7 @@ LABEL_CHOICES = (
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
+    description = models.TextField(max_length=2500)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discounted_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=50)
@@ -28,16 +29,22 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
+        return reverse("product", kwargs={
+            "slug": self.slug
+        })
+
+    def get_add_to_cart_url(self):
+        return reverse("add_to_cart", kwargs={
             "slug": self.slug
         })
 
 
 class OrderItem(models.Model):
     items = models.ForeignKey(Item, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.title
+        return f"{self.quantity} of {self.items.title}"
 
 
 class Order(models.Model):
@@ -45,7 +52,7 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
-    order = models.BooleanField(default=False)
+    ordered = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

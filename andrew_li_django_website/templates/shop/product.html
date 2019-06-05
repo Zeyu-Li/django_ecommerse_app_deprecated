@@ -39,7 +39,6 @@ h1 {
 .show {
     top:56px;
 }
-
 {% endblock style %}
 
 {% block text %}
@@ -65,44 +64,44 @@ h1 {
         <div class="p-4">
 
             <div class="mb-3">
-            <a href="">
-                <span class="badge purple mr-1">{{ object.get_catagory_display }}</span>
-            </a>
-            <a href="">
-                <span class="badge blue mr-1">New</span>
-            </a>
-            <a href="">
-                <span class="badge red mr-1">Bestseller</span>
-            </a>
+                <a href="">
+                    <span class="badge badge-secondary">{{ item.get_category_display }}</span>
+                </a>
+                <a href="">
+                    <span class="badge badge-secondary">New</span>
+                </a>
+                <a href="">
+                    <span class="badge badge-secondary">Bestseller</span>
+                </a>
             </div>
 
             <p class="lead">
+            {% if item.discounted_price %}
             <span class="mr-1">
-                <del>$400</del>
+                <del>${{ item.price }}</del>
+                <span>${{ item.discounted_price }}</span>
             </span>
-            <span>$
-            {% if it.discount_price %}
-            {{ item.discount_price }}
             {% else %}
-            {{ item.price }}
+                <span>${{ item.price }}</span>
             {% endif %}</span>
             </p>
 
             <p class="lead font-weight-bold">Description</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-            sint voluptatibus!
-            Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+            <p>{{ item.description }}</p>
 
-            <form class="d-flex justify-content-left">
+            <br>
+
+            {% comment %} <form class="d-flex justify-content-left">
             <!-- Default input -->
-            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-            <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-            </button>
 
-            </form>
-
+            </form> {% endcomment %}
+            <a href="{{ items.get_add_to_cart_url }}">
+            
+                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                </button>
+            </a>
         </div>
         <!--Content-->
 

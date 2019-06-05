@@ -44,6 +44,25 @@ p {
     box-shadow: 0 0 5px #40f2f7;
 }
 
+/* badges */
+
+
+.badge:hover {
+    text-decoration: none;
+    color: #cccccc;
+}
+.badge-primary {
+    background-color: rgb(37, 154, 201);
+}
+.badge-secondary {
+    background-color: purple;
+}
+.badge-danger {
+    background-color: rgb(219, 12, 12);
+}
+
+/* badges */
+
 /* footer */
 
 .footer a {
