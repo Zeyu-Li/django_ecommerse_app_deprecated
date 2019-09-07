@@ -40,8 +40,8 @@ p {
     color: #ff304b;
 }
 .form-control:focus {
-    border-color: #061b79!important;
-    box-shadow: 0 0 5px #555fee!important;
+    border-color: #22e0e5;
+    box-shadow: 0 0 5px #40f2f7;
 }
 
 /* badges */
