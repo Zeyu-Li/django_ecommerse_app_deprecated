@@ -40,7 +40,7 @@ class Item(models.Model):
 
 
 class OrderItem(models.Model):
-    items = models.ForeignKey(Item, on_delete=models.CASCADE)
+    items = models.ForeignKey(Item, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField(default=1)
 
     def __str__(self):
@@ -48,7 +48,7 @@ class OrderItem(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()

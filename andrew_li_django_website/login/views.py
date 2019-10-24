@@ -42,6 +42,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    
     args = {'user':request.user}
 
     return render(request, 'login/profile.html', args)

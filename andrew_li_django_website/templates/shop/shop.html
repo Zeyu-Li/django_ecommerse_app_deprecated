@@ -59,51 +59,51 @@ color: #333232!important
 color: #1c1b1b!important
 }
 .mask {
-    width: 100%;
-    height: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    transition: .2s;
-    -moz-transition: .2s;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
+width: 100%;
+height: 100%;
+transition: .5s ease;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+transition: .2s;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+-o-transition: .2s;
 }
 .overlay {
-    width: 100%;
-    position: relative;
-    
-    transition: .2s;
-    -moz-transition: .2s;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
+width: 100%;
+position: relative;
+
+transition: .2s;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+-o-transition: .2s;
 }
 .overlay:hover .card-img-top {
-    opacity: 0.3;
-    transition: .2s;
-    -moz-transition: .2s;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
+opacity: 0.3;
+transition: .2s;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+-o-transition: .2s;
 }
 
 .overlay:hover .mask {
-    opacity: 1;
-    transition: .2s;
-    -moz-transition: .2s;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
+opacity: 1;
+transition: .2s;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+-o-transition: .2s;
 }
 .linker {
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 }
 .grey_hover:hover {
-    color: #666666!important
+color: #666666!important
 }
 {% endblock style %}
 
@@ -162,7 +162,7 @@ color: #1c1b1b!important
             <div class="row wow fadeIn">
 
                 {% for item in object_list %}
-                
+
                 <div class="col-lg-3 col-md-6 mb-4">
 
                     <div class="card">
@@ -183,7 +183,8 @@ color: #1c1b1b!important
                             </a>
                             <h5>
                                 <strong>
-                                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text grey_hover">{{ item.title }}
+                                    <a href="{{ item.get_absolute_url }}"
+                                        class="dark-grey-text grey_hover">{{ item.title }}
                                         <span class="badge badge-{{ item.get_label_display }}">NEW</span>
                                     </a>
                                 </strong>
@@ -191,11 +192,11 @@ color: #1c1b1b!important
 
                             <h4 class="font-weight-bold blue-text">
                                 <strong>$
-                                {% if item.discounted_price %}
-                                {{ item.discounted_price }}
-                                {% else %}
-                                {{ item.price }}
-                                {% endif %}
+                                    {% if item.discounted_price %}
+                                    {{ item.discounted_price }}
+                                    {% else %}
+                                    {{ item.price }}
+                                    {% endif %}
                                 </strong>
                             </h4>
 
@@ -245,9 +246,7 @@ color: #1c1b1b!important
                 </li>
             </ul>
         </nav>
-        <!--Pagination-->
 
     </div>
 </main>
-<!--Main layout-->
 {% endblock text %}

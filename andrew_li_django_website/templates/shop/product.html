@@ -67,12 +67,6 @@ h1 {
                 <a href="">
                     <span class="badge badge-secondary">{{ item.get_category_display }}</span>
                 </a>
-                <a href="">
-                    <span class="badge badge-secondary">New</span>
-                </a>
-                <a href="">
-                    <span class="badge badge-secondary">Bestseller</span>
-                </a>
             </div>
 
             <p class="lead">
@@ -96,12 +90,13 @@ h1 {
             <!-- Default input -->
 
             </form> {% endcomment %}
-            <a href="{{ items.get_add_to_cart_url }}">
-            
-                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                </button>
+            <a href="{{ items.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
             </a>
+            {% comment %} <a href="{{ item.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+                Remove from cart
+            </a> {% endcomment %}
         </div>
         <!--Content-->
 
@@ -119,11 +114,9 @@ h1 {
         <!--Grid column-->
         <div class="col-md-6 text-center">
 
-        <h4 class="my-4 h4">Additional information</h4>
+        <h4 class="my-4 h4">More Products</h4>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+        <p> TODO: list of more products </p>
 
         </div>
         <!--Grid column-->
@@ -131,34 +124,6 @@ h1 {
     </div>
     <!--Grid row-->
 
-    <!--Grid row-->
-    <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
-
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-    </div>
     <!--Grid row-->
 
     </div>

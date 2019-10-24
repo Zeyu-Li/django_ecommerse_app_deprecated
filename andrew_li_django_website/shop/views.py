@@ -58,11 +58,14 @@ def add_to_cart(request, slug):
         if order.items.filter(item__slug=item.slug).exists():
             order_item.quantity += 1
             order_item.save()
+            return redirect("product", slug=slug)
         else:
             order.items.add(order_item)
+            return redirect("product", slug=slug)
 
     else:
         ordered_date = timezone.now()
-        order = Order.items.create(user=request.user, ordered_date=ordered_date)
+        order = Order.items.create(
+            user=request.user, ordered_date=ordered_date)
         order.items.add(order_item)
     return redirect("product", slug=slug)
