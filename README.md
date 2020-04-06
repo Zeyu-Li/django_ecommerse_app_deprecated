@@ -1,6 +1,9 @@
 # Django Project
 
 ## About
+
+**\* Note deprecated and started from scratch **
+
 This is my second Django project transferred on to the second, school account and is a login app.
 It is also being expanded to include a shopping cart option.
 
@@ -36,12 +39,6 @@ This includes:
  * django-crispy-forms v1.7.2
  * django-recaptcha v2.0.4
  * Pillow v6.0.0
-
-## Simple Rundown of Django
-
-![flowchart](pictures/flowchart.png)
-
- ** using SQLite3 database
 
 ## Reuse
 This code is under MIT licence.
